@@ -39,8 +39,3 @@ let countCharacters = (string, character) => {
         }
     } return characterCounter;
 }
-console.log(countCharacters('ChupapiCCC', 'C'));
-let countBss = (string) => {
-    bCounter = 0;
-
-}
