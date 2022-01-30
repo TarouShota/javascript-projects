@@ -6,7 +6,7 @@ let power = (base, exponent) => {
     return result;
 }
 
-console.log(power(3, 2));
+console.log(squre2(5));
 
 function square(base, exponent) {
     return base * exponent;
@@ -17,3 +17,4 @@ function greet(who) {
 }
 greet("Harry");
 console.log("bye");
+
