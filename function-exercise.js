@@ -39,6 +39,7 @@ let countCharacters = (string, character) => {
         }
     } return characterCounter;
 }
+<<<<<<< HEAD
 console.log(countCharacters('Chupapi', 'C'));
 let countBss = (string) => {
     bCounter = 0;
@@ -49,3 +50,5 @@ let animals = 0;
 let a = 5;
 console.log(a++);
 console.log(++a);
+=======
+>>>>>>> aad11be507c5f75576cf4690c7632c04ff91898c
