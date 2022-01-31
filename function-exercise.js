@@ -50,5 +50,4 @@ let animals = 0;
 let a = 5;
 console.log(a++);
 console.log(++a);
-=======
->>>>>>> aad11be507c5f75576cf4690c7632c04ff91898c
+//Data Structures
