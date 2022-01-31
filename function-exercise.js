@@ -1,4 +1,4 @@
-//Exercise - Minimum
+/*//Exercise - Minimum
 let greaterValue = (a, b) => {
     switch (a, b) {
         case a > b:
@@ -39,3 +39,15 @@ let countCharacters = (string, character) => {
         }
     } return characterCounter;
 }
+<<<<<<< HEAD
+console.log(countCharacters('Chupapi', 'C'));
+let countBss = (string) => {
+    bCounter = 0;
+
+}*/
+let rainForestAcres = 10;
+let animals = 0;
+let a = 5;
+console.log(a++);
+console.log(++a);
+//Data Structures
