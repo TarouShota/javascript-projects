@@ -26,3 +26,11 @@ let sum = (...array) => {
 }
 let numbers = range(1, 10, 3);
 console.log(sum(...numbers));
+
+
+let reverseArray = (...array) => {
+    let newArray = [];
+    newArray = array;
+    return newArray
+}
+console.log(...reverseArray(range(1, 10)));
