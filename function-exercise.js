@@ -45,9 +45,3 @@ let countBss = (string) => {
     bCounter = 0;
 
 }*/
-let rainForestAcres = 10;
-let animals = 0;
-let a = 5;
-console.log(a++);
-console.log(++a);
-//Data Structures
