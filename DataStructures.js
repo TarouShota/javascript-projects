@@ -1,4 +1,4 @@
-let range = (start, end, step) => {
+range = (start, end, step = 1) => {
     let rangeOfNumbers = [];
     if (step < 1) {
         while (start >= end) {
@@ -13,7 +13,7 @@ let range = (start, end, step) => {
     }
     return rangeOfNumbers
 }
-
+/*
 console.log(range(5, 2, -1));
 console.log(range(1, 10, 2));
 let sum = (...array) => {
@@ -33,4 +33,26 @@ let reverseArray = (...array) => {
     newArray = array;
     return newArray
 }
-console.log(...reverseArray(range(1, 10)));
+console.log(...ReverseArray(range(1, 10)));
+*/
+
+let reverseArray = (...array) => {
+    let counter = 1;
+    let newArray = [];
+    while (array.length >= counter) {
+        newArray.push(array[array.length - counter])
+        counter++;
+    } return newArray;
+}
+let testArray = range(1, 15);
+console.log(reverseArray(...testArray));
+
+
+let reverseArrayInPlace = (...array) => {
+    let counting = 0;
+    while (counting <= array.length) {
+
+        return array;
+    }
+}
+console.log(reverseArrayInPlace(...testArray));
