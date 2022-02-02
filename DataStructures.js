@@ -36,7 +36,7 @@ let reverseArray = (...array) => {
 console.log(...ReverseArray(range(1, 10)));
 */
 
-let reverseArray = (...array) => {
+/*let reverseArray = (...array) => {
     let counter = 1;
     let newArray = [];
     while (array.length >= counter) {
@@ -70,3 +70,27 @@ let reverseArrayInPlace = (...array) => {
     } return array
 }
 console.log(reverseArrayInPlace(...testArray));
+*/
+let arrayToList = (...chain) => {
+    let list = {
+        value: chain[0],
+        rest: {
+            value: chain[1],
+            rest: {
+                value: chain[2],
+                rest: null
+            }
+        }
+    }; return list
+}
+let testArray = [5, 2, 1];
+console.log(arrayToList(...testArray))
+
+let listToArray = (list) => {
+    let array = [];
+    array.push(list.value);
+    array.push(list.rest.value);
+    array.push(list.rest.rest.value);
+    return array;
+}
+console.log(listToArray(arrayToList(...testArray)));
