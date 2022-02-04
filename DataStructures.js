@@ -91,6 +91,10 @@ let listToArray = (list) => {
     array.push(list.value);
     array.push(list.rest.value);
     array.push(list.rest.rest.value);
+    console.log("Hello");
     return array;
+
 }
 console.log(listToArray(arrayToList(...testArray)));
+
+//comments
