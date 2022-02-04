@@ -72,6 +72,10 @@ let reverseArrayInPlace = (...array) => {
 console.log(reverseArrayInPlace(...testArray));
 */
 let arrayToList = (...chain) => {
+
+    for (i = 0; chain.length != i; i++) {
+
+    }
     let list = {
         value: chain[0],
         rest: {
@@ -91,10 +95,35 @@ let listToArray = (list) => {
     array.push(list.value);
     array.push(list.rest.value);
     array.push(list.rest.rest.value);
-    console.log("Hello");
     return array;
 
 }
 console.log(listToArray(arrayToList(...testArray)));
 
 //comments
+// Deep Comparison
+
+let deepEqual = (a, b) => {
+    let integerA = 0;
+    if (typeof a && typeof b == 'object') {
+        integerA = a.pop();
+        integerB = b.pop();
+        if (integerA == integerB) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+    integer = a.pop();
+    return a
+
+    if (a === b && typeof a == typeof b) {
+        return true
+    } else {
+        return false
+    }
+}
+let array = [5];
+console.log(deepEqual([0], [0]));
+console.log(typeof array);
