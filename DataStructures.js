@@ -94,3 +94,5 @@ let listToArray = (list) => {
     return array;
 }
 console.log(listToArray(arrayToList(...testArray)));
+
+//sooo we need to finish it asap
