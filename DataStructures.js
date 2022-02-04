@@ -72,6 +72,10 @@ let reverseArrayInPlace = (...array) => {
 console.log(reverseArrayInPlace(...testArray));
 */
 let arrayToList = (...chain) => {
+
+    for (i = 0; chain.length != i; i++) {
+
+    }
     let list = {
         value: chain[0],
         rest: {
@@ -91,7 +95,6 @@ let listToArray = (list) => {
     array.push(list.value);
     array.push(list.rest.value);
     array.push(list.rest.rest.value);
-    console.log("Hello");
     return array;
 
 }
