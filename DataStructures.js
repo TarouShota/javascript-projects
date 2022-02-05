@@ -110,7 +110,7 @@ let deepEqual = (a, b) => {
     if (typeof a && typeof b == 'object') {
         for (const property in a) {
             integerA = integerA + property;
-            console.log(integerA)
+            console.log(integerA);
         }
         integerA = a.pop();
         integerB = b.pop();
