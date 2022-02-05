@@ -87,8 +87,9 @@ let arrayToList = (...chain) => {
         }
     }; return list
 }
-let testArray = [5, 2, 1];
-console.log(arrayToList(...testArray))
+let testArray = [5, 3, 4];
+let secondObject = arrayToList(...testArray);
+console.log(secondObject);
 
 let listToArray = (list) => {
     let array = [];
@@ -104,8 +105,13 @@ console.log(listToArray(arrayToList(...testArray)));
 // Deep Comparison
 
 let deepEqual = (a, b) => {
-    let integerA = 0;
+    let integerA = {};
+    let integerB = {};
     if (typeof a && typeof b == 'object') {
+        for (const property in a) {
+            integerA = integerA + property;
+            console.log(integerA)
+        }
         integerA = a.pop();
         integerB = b.pop();
         if (integerA == integerB) {
@@ -117,13 +123,17 @@ let deepEqual = (a, b) => {
     }
     integer = a.pop();
     return a
+}
 
-    if (a === b && typeof a == typeof b) {
-        return true
-    } else {
-        return false
+let array = [5];
+let testObject = {
+    value: 3,
+    rest: {
+        value: 4,
+        rest: {
+            value: 5,
+            rest: null
+        }
     }
 }
-let array = [5];
-console.log(deepEqual([0], [0]));
-console.log(typeof array);
+console.log(deepEqual(testObject, secondObject));
