@@ -103,34 +103,39 @@ console.log(listToArray(arrayToList(...testArray)));
 
 //comments
 // Deep Comparison
-
+let integerA = 0;
+let integerB = 0;
+let counter = 1;
 let deepEqual = (a, b) => {
-    let integerA = a;
-    let integerB = b;
-    if (typeof a && typeof b == 'object') {
-        for (const property in a) {
-            integerA = integerA + property;
-            console.log(integerA);
-            integerA = a.pop();
-            integerB = b.pop();
-        }
 
-        if (integerA == integerB) {
-            return true
-        } else {
-            return false
-        }
+    switch (typeof a, typeof b) {
+        case 'string':
+            if (a === b) {
+                return true;
+            } else {
+                return false;
+            }
+        case 'object':
+            
+
+
+        case 'integer':
+            if (a === b) {
+                return true;
+            } else {
+                return false;
+            }
+        default:
+            return false;
+
+
 
     }
 
-    if (a === b) {
-        return true
-    } else {
-        return false
-    }
 }
 
-let array = [5];
+testArray = [2, 4, 3];
+let array = [5, 4, 3];
 let testObject = {
     value: 3,
     rest: {
@@ -142,5 +147,22 @@ let testObject = {
     }
 }
 // console.log(deepEqual(testObject, secondObject));
-console.log(deepEqual('sdfsdf', 'sdfsdf'));
-console.log(Object.keys(secondObject));
+console.log(deepEqual(array, testArray))
+//console.log(deepEqual(testObject, secondObject));
+//console.log(Object.keys(secondObject));
+
+/*
+let deepEqual = (a, b) => {
+    let integerA = {};
+    let integerB = {};
+    let integerA = a;
+    let integerB = b;
+    if (typeof a && typeof b == 'object') {
+        for (const property in a) {
+            integerA = integerA + property;
+            console.log(integerA);
+            integerA = a.pop();
+            integerB = b.pop();
+        }
+*/
+
