@@ -116,7 +116,7 @@ let deepEqual = (a, b) => {
                 return false;
             }
         case 'object':
-            
+
 
 
         case 'integer':
@@ -147,7 +147,8 @@ let testObject = {
     }
 }
 // console.log(deepEqual(testObject, secondObject));
-console.log(deepEqual(array, testArray))
+console.log(deepEqual(array, testArray));
+console.log('bruh');
 //console.log(deepEqual(testObject, secondObject));
 //console.log(Object.keys(secondObject));
 
