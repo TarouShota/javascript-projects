@@ -20,12 +20,12 @@ let sum = (...array) => {
     let result = 0;
     for (let theSum of array) {
         result = result + theSum;
-        //console.log(result);
+
     }
     return result;
 }
 let numbers = range(1, 10, 3);
-console.log(sum(...numbers));
+console.log(sum(...numers));
 
 
 let reverseArray = (...array) => {
@@ -72,6 +72,10 @@ let reverseArrayInPlace = (...array) => {
 console.log(reverseArrayInPlace(...testArray));
 */
 let arrayToList = (...chain) => {
+
+    for (i = 0; chain.length != i; i++) {
+
+    }
     let list = {
         value: chain[0],
         rest: {
@@ -83,8 +87,9 @@ let arrayToList = (...chain) => {
         }
     }; return list
 }
-let testArray = [5, 2, 1];
-console.log(arrayToList(...testArray))
+let testArray = [5, 3, 4];
+let secondObject = arrayToList(...testArray);
+console.log(secondObject);
 
 let listToArray = (list) => {
     let array = [];
@@ -92,7 +97,72 @@ let listToArray = (list) => {
     array.push(list.rest.value);
     array.push(list.rest.rest.value);
     return array;
+
 }
 console.log(listToArray(arrayToList(...testArray)));
 
-//sooo we need to finish it asap
+//comments
+// Deep Comparison
+let integerA = 0;
+let integerB = 0;
+let counter = 1;
+let deepEqual = (a, b) => {
+
+    switch (typeof a, typeof b) {
+        case 'string':
+            if (a === b) {
+                return true;
+            } else {
+                return false;
+            }
+        case 'object':
+
+
+
+        case 'integer':
+            if (a === b) {
+                return true;
+            } else {
+                return false;
+            }
+        default:
+            return false;
+
+
+
+    }
+
+}
+
+testArray = [2, 4, 3];
+let array = [5, 4, 3];
+let testObject = {
+    value: 3,
+    rest: {
+        value: 4,
+        rest: {
+            value: 5,
+            rest: null
+        }
+    }
+}
+// console.log(deepEqual(testObject, secondObject));
+console.log(deepEqual(array, testArray));
+//console.log(deepEqual(testObject, secondObject));
+//console.log(Object.keys(secondObject));
+
+/*
+let deepEqual = (a, b) => {
+    let integerA = {};
+    let integerB = {};
+    let integerA = a;
+    let integerB = b;
+    if (typeof a && typeof b == 'object') {
+        for (const property in a) {
+            integerA = integerA + property;
+            console.log(integerA);
+            integerA = a.pop();
+            integerB = b.pop();
+        }
+*/
+
