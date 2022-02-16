@@ -71,6 +71,7 @@ let reverseArrayInPlace = (...array) => {
 }
 console.log(reverseArrayInPlace(...testArray));
 */
+/*
 let arrayToList = (...chain) => {
 
     for (i = 0; chain.length != i; i++) {
@@ -152,7 +153,7 @@ console.log('bruh');
 //console.log(deepEqual(testObject, secondObject));
 //console.log(Object.keys(secondObject));
 
-/*
+
 let deepEqual = (a, b) => {
     let integerA = {};
     let integerB = {};
@@ -166,4 +167,45 @@ let deepEqual = (a, b) => {
             integerB = b.pop();
         }
 */
+/*
+var reverseString = function (array) {
+    let counter = 1;
+    let newArray = [];
+    while (array.length >= counter) {
+        newArray.push(array[array.length - counter]);
+        counter++;
+    } return newArray.toString();
+};
+console.log(reverseString('Hello'));
 
+var isPalindrome = function (x) {
+    let myArray = String(x).split("").map((x) => {
+        return Number(x)
+    });
+    console.log(myArray.toString());
+    if (myArray.toString() == myArray.reverse().toString()) {
+
+        return true
+    }
+    return false
+};*/
+
+
+
+var reverseString = function (s) {
+    let myArray = String(s).split("").map((x) => {
+        return Number(s)
+    });
+    console.log(myArray);
+    let counter = 1;
+
+    let newArray = [];
+    while (s.length >= counter) {
+        newArray.push(s[s.length - counter]);
+        counter++;
+        console.log(newArray);
+    }
+    return newArray
+
+};
+console.log(reverseString('SUUUUUUI'));
