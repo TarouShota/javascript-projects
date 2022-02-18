@@ -1,3 +1,4 @@
+/*
 range = (start, end, step = 1) => {
     let rangeOfNumbers = [];
     if (step < 1) {
@@ -13,7 +14,7 @@ range = (start, end, step = 1) => {
     }
     return rangeOfNumbers
 }
-/*
+
 console.log(range(5, 2, -1));
 console.log(range(1, 10, 2));
 let sum = (...array) => {
@@ -193,19 +194,13 @@ var isPalindrome = function (x) {
 
 
 var reverseString = function (s) {
-    let myArray = String(s).split("").map((x) => {
-        return Number(s)
-    });
-    console.log(myArray);
     let counter = 1;
-
     let newArray = [];
     while (s.length >= counter) {
         newArray.push(s[s.length - counter]);
         counter++;
-        console.log(newArray);
     }
     return newArray
 
 };
-console.log(reverseString('SUUUUUUI'));
+console.log(reverseString('Hannahdsa'));
