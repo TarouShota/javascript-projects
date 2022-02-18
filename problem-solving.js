@@ -25,3 +25,4 @@ function sum(array) {
 //[1, 2, 3, 4, 3, 2, 1]; 3
 console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]));
 console.log(findEvenIndex([1, 100, 50, -51, 1, 2]))
+
