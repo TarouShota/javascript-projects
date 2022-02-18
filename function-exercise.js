@@ -45,3 +45,9 @@ let countBss = (string) => {
     bCounter = 0;
 
 }*/
+var search = function (nums, target) {
+
+};
+
+let testArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(testArray[11]);
