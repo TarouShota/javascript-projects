@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/TarouShota/Eloquent-JavaScript/issues"
   },
-  "homepage": "https://github.com/TarouShota/Eloquent-JavaScript#readme"
+  "homepage": "https://github.com/TarouShota/Eloquent-JavaScript#readme",
+  "dependencies": {
+    "jsdom-quokka-plugin": "^1.0.16"
+  }
 }
