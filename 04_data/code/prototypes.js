@@ -24,24 +24,68 @@ console.log(head.glasses);
 // hamsters
 
 let hamster = {
-    stomach: [],
 
     eat(food) {
-        this.stomach.push(food);
+        this.stomach = [food];
     }
 };
 
 let speedy = {
+    stomach: [],
     __proto__: hamster
 };
 
 let lazy = {
+    stomach: [],
     __proto__: hamster
 };
 
 // This one found the food
 speedy.eat("apple");
-console.log(speedy.stomach); // apple
+lazy.eat('straw');
+
+console.log(speedy.stomach);
+
 
 // This one also has it, why? fix please.
-console.log(lazy.stomach); 
+console.log(lazy.stomach);
+
+function Calculator() {
+
+    this.read = function (a, b) {
+        this.a = a;
+        this.b = b;
+    };
+
+    this.sum = function () {
+        return this.a + this.b;
+    };
+
+    this.mul = function () {
+        return this.a * this.b;
+    };
+}
+
+let calculator = new Calculator();
+calculator.read(2, 3);
+
+
+console.log("Sum=" + calculator.sum());
+console.log("Mul=" + calculator.mul());
+
+function Accumulator(startValue) {
+    this.sumArray = [startValue]
+    this.read = function (...input) {
+        this.sumArray.push(...input);
+        return this.sumArray
+
+    }
+}
+
+let accumulator = new Accumulator(1); // initial value 1
+
+console.log(accumulator.read(3)); // adds the user-entered value
+accumulator.read(4, 5, 6, 7, 8);
+console.log(accumulator.sumArray) // adds the user-entered value
+
+alert(accumulator.value); 
