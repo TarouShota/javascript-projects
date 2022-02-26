@@ -6,11 +6,15 @@ function HighScore(name, score) {
         this.score = 0;
     }
 }
+//Intializing scoreBoard with default value
 let scoreBoard = {
     name: 'The Best Ever',
     score: 100000,
 };
+
 let player1 = new HighScore('ben', '10');
+
+// Create a ScoreBoard 
 let createScoreBoard = function (name, score) {
     if (name == undefined || score == undefined) {
         return scoreBoard
@@ -19,6 +23,8 @@ let createScoreBoard = function (name, score) {
     scoreBoard.score = score;
     return scoreBoard
 }
+//Adds a new player to a ScoreBoard
+
 let addPlayer = function (prevScore, name, score) {
     let result = {
         previouScore: (scoreBoard),
