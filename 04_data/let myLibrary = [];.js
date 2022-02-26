@@ -1,4 +1,6 @@
 let myLibrary = [];
+
+
 function Book(title, author, pages, state) {
     this.title = title
     this.author = author
@@ -12,14 +14,17 @@ Book.prototype = {
         myLibrary.push(this)
     }
 }
+
+
 const got = new Book('Game of Thrones', 'Allah', 295, 'not read yet');
 const aot = new Book('attack on titan', 'kageyama', 245, 'not read yet')
 
 
-console.log(got.addBookToLibrary());
+got.addBookToLibrary()
 console.log(myLibrary);
 
-console.log(aot.addBookToLibrary());
+aot.addBookToLibrary();
 console.log(myLibrary);
+
 console.log(got);
 
