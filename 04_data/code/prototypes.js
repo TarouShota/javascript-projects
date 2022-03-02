@@ -73,19 +73,23 @@ calculator.read(2, 3);
 console.log("Sum=" + calculator.sum());
 console.log("Mul=" + calculator.mul());
 
+//Accumulator function 
+const reducer = (accumulator, f) => accumulator + f;
+
 function Accumulator(startValue) {
     this.sumArray = [startValue]
     this.read = function (...input) {
         this.sumArray.push(...input);
-        return this.sumArray
+        return this.sumArray.reduce(reducer);
 
     }
 }
+
 
 let accumulator = new Accumulator(1); // initial value 1
 
 console.log(accumulator.read(3)); // adds the user-entered value
 accumulator.read(4, 5, 6, 7, 8);
-console.log(accumulator.sumArray) // adds the user-entered value
+console.log(accumulator.read()) // adds the user-entered value
 
 alert(accumulator.value); 
