@@ -27,4 +27,3 @@ aot.addBookToLibrary();
 console.log(myLibrary);
 
 console.log(got);
-
