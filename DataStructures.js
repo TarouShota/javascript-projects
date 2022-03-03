@@ -21,12 +21,12 @@ let sum = (...array) => {
     let result = 0;
     for (let theSum of array) {
         result = result + theSum;
-        //console.log(result);
+
     }
     return result;
 }
 let numbers = range(1, 10, 3);
-console.log(sum(...numbers));
+console.log(sum(...numers));
 
 
 let reverseArray = (...array) => {
@@ -150,7 +150,10 @@ let testObject = {
 }
 // console.log(deepEqual(testObject, secondObject));
 console.log(deepEqual(array, testArray));
+<<<<<<< HEAD
+=======
 console.log('bruh');
+>>>>>>> code-projects
 //console.log(deepEqual(testObject, secondObject));
 //console.log(Object.keys(secondObject));
 
