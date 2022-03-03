@@ -44,20 +44,24 @@ let updateScore = function (player, newScore) {
 //Adds 100 to a every value in an object 
 let applyMondayBonus = function (theScoreBoard) {
     for (let value in theScoreBoard) {
+        console.log(value);
         theScoreBoard[value] += 100;
     }
     console.log(theScoreBoard);
 }
 //Passes an object to a set function
 let normalizeScore = function (objToNormal) {
-    return objToNormal.normalizeScore()
+    return objToNormal.normalizeScore(objToNormal.score)
 }
 let normalize = (score) => {
-    return 'huy'
+    return score + 100
 }
 
 console.log(createScoreBoard('ben', 322));
 console.log(addPlayer({ 'Dave Thomas': 0 }, 'José Valim', 486373));
 applyMondayBonus(scoreBoard);
+
+
 const params = { score: 400, normalizeScore: normalize };
 console.log(normalizeScore(params));
+console.log(scoreBoard);
