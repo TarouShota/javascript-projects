@@ -109,3 +109,9 @@ let printListLoop = (list) => {
 console.log(printList(list));
 console.log(list.hasOwnProperty(''));
 console.log(list.next);
+
+
+let sumUp = function () {
+    return function ();
+}
+console.log(sumUp(1)(1));
