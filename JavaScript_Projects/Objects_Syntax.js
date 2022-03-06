@@ -1,4 +1,4 @@
-function HighScore(name, score) {
+/*function HighScore(name, score) {
     this.name = name;
     this.score = score;
     this.delete = function () {
@@ -111,7 +111,21 @@ console.log(list.hasOwnProperty(''));
 console.log(list.next);
 
 
-let sumUp = function () {
-    return function ();
+
+
+
+
+*/
+
+let users = [
+    { name: "John", age: 20, surname: "Johnson" },
+    { name: "Pete", age: 18, surname: "Peterson" },
+    { name: "Ann", age: 19, surname: "Hathaway" }
+];
+
+function byField(fieldName) {
+    return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
 }
-console.log(sumUp(1)(1));
+
+console.log(users.sort((a, b) => a.name > b.name ? 1 : -1))
+console.log(users.sort((a, b) => a.age > b.age ? 1 : -1));
