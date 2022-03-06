@@ -127,5 +127,8 @@ function byField(fieldName) {
     return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
 }
 
+
 console.log(users.sort((a, b) => a.name > b.name ? 1 : -1))
 console.log(users.sort((a, b) => a.age > b.age ? 1 : -1));
+
+
