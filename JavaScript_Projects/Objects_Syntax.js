@@ -126,9 +126,22 @@ let users = [
 function byField(fieldName) {
     return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
 }
+console.log(users.sort(byField('age')));
 
 
-console.log(users.sort((a, b) => a.name > b.name ? 1 : -1))
+console.log(users.sort((a, b) => a.name > b.name ? 1 : -1));
 console.log(users.sort((a, b) => a.age > b.age ? 1 : -1));
 
+
+function sum(a) {
+
+    return function (b) {
+        return a + b; // takes "a" from the outer lexical environment
+    };
+
+}
+console.log('erutguier')
+console.log(sum(1));
+console.log(sum(1)(2)); // 3
+console.log(sum(5)(-1)); // 4
 
