@@ -89,10 +89,10 @@ let list = {
 
 let sumOfValues = 0;
 
-let printList = (list) => {
-    sumOfValues += list.value
-    if (list.next != null) {
-        printList(list.next);
+let printList = (givenList) => {
+    sumOfValues += givenList.value
+    if (givenList.next != null) {
+        printList(givenList.next);
     }
     return sumOfValues
 }
@@ -144,4 +144,45 @@ console.log('erutguier')
 console.log(sum(1));
 console.log(sum(1)(2)); // 3
 console.log(sum(5)(-1)); // 4
+
+
+let journal = [
+    {
+        events: ["work", "touched tree", "pizza",
+            "running", "television"],
+        squirrel: false
+    },
+    {
+        events: ["work", "ice cream", "cauliflower",
+            "lasagna", "touched tree", "brushed teeth"],
+        squirrel: false
+    },
+    {
+        events: ["weekend", "cycling", "break", "peanuts",
+            "beer"],
+        squirrel: true
+    },
+    /* and so on... */
+];
+console.log(journal[0].events)
+
+let squirrel = true
+
+let testObject = {
+    firstDay: {
+        events: [0, 2, 3, 4],
+        squirrel: false
+    },
+    secondDay: {
+        events: [0, 3, 4, 5],
+        squirrel: true
+    },
+    gameStart: function () {
+        return this.secondDay
+    }
+}
+
+
+console.log(testObject.gameStart())
+
 
