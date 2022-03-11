@@ -1,13 +1,4 @@
 
-let theButton = document.querySelector('button');
-let mainSection = [...document.querySelectorAll('div')];
-let mainDisplay = document.querySelector('main');
-
-let body = document.querySelector('body');
-let frontDisplay = body.firstElementChild;
-let result = frontDisplay.querySelector('h2');
-
-
 let game = {
     gameBoard: ['', '', '', '', '', '', '', '', ''],
     winningMoves:
@@ -90,11 +81,49 @@ let game = {
 
 }
 
-console.log(game.winState());
+let theButton = document.querySelector('button');
+let mainDisplay = document.querySelector('main');
 
+let body = document.querySelector('body');
+let frontDisplay = body.firstElementChild;
+
+let result = frontDisplay.querySelector('h2');
+let welcomeSection = document.createElement('section');
+
+let firstPlayer = document.createElement('form');
+let secondPlayer = document.createElement('form')
+let secondPlayerInp = document.createElement('form');
+
+firstPlayer.setAttribute('class', 'form-input');
+firstPlayerInp = document.createElement('input');
+
+
+firstPlayerInp.setAttribute('placeholder', 'Player 1');
+firstPlayerInp.setAttribute('type', 'text', 'id', 'name', 'placeholder', 'Enter your name');
+
+
+welcomeSection.append(firstPlayer, secondPlayer)
+
+
+firstPlayerInp.setAttribute('style', 'color:white; background:black; width:10rem; height:3rem');
+secondPlayerInp.setAttribute('style', 'color:white; background:black; width:10rem; height:3rem');
+
+firstPlayer.appendChild(firstPlayerInp);
+body.appendChild(welcomeSection);
+console.log(welcomeSection)
+
+console.log(game.winState());
 console.log(game.fullArray());
 
 
+
+for (i = 0; i < 9; i++) {
+    const div = document.createElement('div')
+    div.setAttribute('id', `${i}`);
+    mainDisplay.appendChild(div);
+};
+
+let mainSection = [...document.querySelectorAll('div')];
 
 
 
