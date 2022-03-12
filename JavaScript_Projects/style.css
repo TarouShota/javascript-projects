@@ -90,3 +90,9 @@ section>input{
 body{
     background-color: darkred;
 }
+
+button{
+    margin-top: 3rem;
+    width: 6rem;
+    height: 2rem;
+}
