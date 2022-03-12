@@ -14,9 +14,8 @@ body{
 
 main{
     height: 100vh;
-    width: 90vw;
+    width: 75vw;
     background-color: black;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     font-size: 8rem;
@@ -81,4 +80,19 @@ section>input{
     border-radius: 0.5rem;
     border: white 0.2rem solid;
 
+}
+
+.form-input{
+    color: white;
+    background-color: black;
+}
+
+body{
+    background-color: darkred;
+}
+
+button{
+    margin-top: 3rem;
+    width: 6rem;
+    height: 2rem;
 }
