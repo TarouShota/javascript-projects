@@ -2,34 +2,30 @@ let myLibrary = [];
 
 const wholeSection = document.querySelector('.whole-section')
 const bookShelf = document.querySelector('.book-shelf');
+
 const bookTitle = document.querySelector('.book-title');
 const bookSection = document.querySelector('.book-section');
-
-
-
 const bookAuthor = document.querySelector('.book-author');
-const bookPages = document.querySelector('.book-pages');
 
+const bookPages = document.querySelector('.book-pages');
 const bookState = document.querySelector('.book-state');
 
+let counter = 1;
 
+class Book {
+    constructor(title, author, pages, state) {
+        this.title = title
+        this.author = author
 
-function Book(title, author, pages, state) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.state = state
+        this.pages = pages
+        this.state = state
+    }
 
-
-    //this.book = (`${title} by ${author}, ${pages} pages, ${state}`)
-}
-
-Book.prototype = {
-    addBookToLibrary: function () {
+    addBookToLibrary() {
         let div = document.createElement('div');
         let ul = document.createElement('ul');
 
-        for (i = 1; i < 5; i++) {
+        for (counter = 1; counter < 5; counter++) {
             let list = document.createElement('li');
             ul.appendChild(list);
         }
@@ -37,14 +33,15 @@ Book.prototype = {
         wholeSection.append(div);
         let lists = ul.children;
 
-        /* 
- */
         lists[0].textContent = this.title;
         lists[1].textContent = this.author;
         lists[2].textContent = this.pages;
         lists[3].textContent = this.state;
     }
+    //this.book = (`${title} by ${author}, ${pages} pages, ${state}`)
 }
+
+
 
 
 
@@ -60,7 +57,7 @@ try {
     const btn = document.querySelector('#btn');
     btn.onclick = () => {
         const newBook = new Book(prompt("Book Title:"), prompt('The Author:'), prompt('Pages:'), prompt("have u already read it?"));
-        newBook.addBookToLibrary()
+        newBook.addBookToLibrary();
     };
 } catch {
     console.log('eei')
