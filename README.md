@@ -1,5 +1,6 @@
 # Eloquent-JavaScript:
- practical tasks from the book Eloquent JavaScript<br />
+ practical usage of a programming language - JavaScript<br />
+ Current projects:
  tic-tac-toe-game <br />
  local-library-project <br />
  leet-code-exercises <br />
