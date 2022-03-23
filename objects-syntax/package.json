@@ -1,0 +1,23 @@
+{
+  "name": "eloquentjs_playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AlgorithmsAlik.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarouShota/Eloquent-JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TarouShota/Eloquent-JavaScript/issues"
+  },
+  "homepage": "https://github.com/TarouShota/Eloquent-JavaScript#readme",
+  "dependencies": {
+    "jsdom-quokka-plugin": "^1.0.16"
+  }
+}
