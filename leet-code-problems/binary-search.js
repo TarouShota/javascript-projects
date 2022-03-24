@@ -28,15 +28,15 @@ var searchInsert = function (nums, target) {
 
         if (target === middle) {
             result = middle;
-            return result
+            return
         }
         if (middle > target) {
             let leftSide = nums.slice(0, atIndex);
-            return iterate(leftSide, target);
+            iterate(leftSide, target);
         }
         if (middle < target) {
             let rightSide = nums.slice(atIndex, nums.length);
-            return iterate(rightSide, target);
+            iterate(rightSide, target);
         }
     }
     addElem = function () {
