@@ -1,6 +1,8 @@
 
 
 
+
+
 let numbers = [
     -1, 0, 3,
     5, 9, 12];
@@ -10,7 +12,7 @@ console.log(Math.round(targets));
 //console.log(nums[nums.length / 2])
 
 
-search = function (nums, target) {
+var searchInsert = function (nums, target) {
 
     iterate = function (nums, target) {
         if (nums.length == 1) {
@@ -21,32 +23,38 @@ search = function (nums, target) {
             }
         }
         let middle = nums[Math.floor(nums.length / 2)];
-        let atIndex = Math.round(nums.indexOf(middle))
-        console.log(middle)
+        let atIndex = (nums.indexOf(middle))
 
 
         if (target === middle) {
-            return result = middle;
+            result = middle;
+            return result
         }
         if (middle > target) {
             let leftSide = nums.slice(0, atIndex);
-            console.log(leftSide);
-
             return iterate(leftSide, target);
         }
         if (middle < target) {
             let rightSide = nums.slice(atIndex, nums.length);
-            console.log(rightSide)
-
             return iterate(rightSide, target);
         }
     }
-    return (iterate(nums, target) != undefined) ? nums.indexOf(iterate(nums, target)) : -1;
+    addElem = function () {
+        let counter = 0
+        while (nums[counter] < target) {
+            counter++
+        }
+        nums[counter] = target
+        return nums.indexOf(target);
+    }
+    let output = iterate(nums, target);
+    return (output !== undefined) ? nums.indexOf(output) : addElem();
 }
 
-console.log(search(numbers, 9));
-console.log(search([5], 5));
-console.log(search([-1, 0, 3, 5, 9, 12], 2));
+console.log(searchInsert(numbers, 9));
+console.log(searchInsert([3], 1));
+console.log(searchInsert([-1, 0, 3, 5, 9, 12], 2));
+
 
 
 
