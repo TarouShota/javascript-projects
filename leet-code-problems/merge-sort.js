@@ -49,10 +49,10 @@ var mergeSort = function (array) {
     let atIndex = (array.indexOf(middle));
     let leftSide = array.slice(0, atIndex)
     let rightSide = array.slice(atIndex, array.length);
-    if (leftSide.length <= 3 {
+    if (leftSide.length <= 2) {
         return compare(leftSide)
     }
-    if (rightSide.length <= 3) {
+    if (rightSide.length <= 2) {
         return compare(rightSide)
     }
     return [mergeSort(leftSide), mergeSort(rightSide)];
