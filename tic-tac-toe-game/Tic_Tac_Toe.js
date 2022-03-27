@@ -1,3 +1,4 @@
+/* The above code is creating a game of tic tac toe. */
 let game = {
     //gameboard array, set of winning moves
     gameBoard: ["", "", "", "", "", "", "", "", ""],
@@ -121,10 +122,9 @@ let submitButton = document.createElement("button");
 submitButton.setAttribute("type", "submit");
 submitButton.textContent = "Start";
 
-firstPlayerInp = document.createElement("input");
+let firstPlayerInp = document.createElement("input");
 
 //all atributes, which will be passed to firstPlayerINp
-firstPlayerInp.setAttribute;
 let inputValues = [
     "type",
     "text",

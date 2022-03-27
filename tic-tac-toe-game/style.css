@@ -1,15 +1,12 @@
 
-*{
-    color: white;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;  
-
-}
 
 
 body{
     font-size: 1.1vmin;
+    color: white;
+    margin: 0;
+    padding: 0;  
+
 }
 
 main{
