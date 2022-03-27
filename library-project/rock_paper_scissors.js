@@ -1,5 +1,9 @@
+/**
+ * It returns a random number between 1 and 3.
+ * @param root - The root node of the tree.
+ */
 root = [1, 3, 5, 6, 2, 3];
-let traverse = (root) => {};
+let traverse = (root) => { };
 console.log(traverse(root));
 
 let computerPlay = () => {
@@ -20,6 +24,13 @@ let upperCase = (stringToChange) => {
   stringToChange = stringToChange[0].replace("s", "S");
   return stringToChange;
 };
+/**
+ * Given a player's input and the computer's input, return a string that says who won or if there was a
+ * tie
+ * @param player - The player's input.
+ * @param computer - The computer's choice.
+ * @returns The result of the game.
+ */
 let theResult = (player, computer) => {
   switch (playerInput) {
     case "Rock":
@@ -38,6 +49,11 @@ console.log(computerPlay());
 const num = prompt("Enter a number: ");
 const input = prompt();
 
+/**
+ * It plays a round of rock paper scissors.
+ * @param playerInput - The player's input.
+ * @param computerInput - The computer's random choice.
+ */
 let playRound = (playerInput, computerInput) => {
   upperCase(playerInput);
   console.log(playerInput);

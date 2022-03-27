@@ -1,6 +1,8 @@
+/* Reversing the order of the array. */
 let employeeNames = ['John', 'Jackd', 'Chrisz', 'Hank', 'John', 'Jack', 'Chris', 'Hank'];
 let numbers = [12, 3, 4, 5, -23, 3, 6 - 51];
 
+/* Reversing the order of the array. */
 let reverseArr = [];
 let i = 1;
 
@@ -12,17 +14,37 @@ while (employeeNames.length != 0) {
 
 console.log(reverseArr);
 
-var twoPointer = function (arr) {
-    let j = arr.length - 1;
+/* A JavaScript object. */
+pyramid = {
+    values: {
+        [1]: ['', 1, 7, 3, 11],
+        [2]: ['', 10, 4, 1],
+        [3]: ['', 20, 22],
+        [4]: ['', 10],
+    },
 
-    for (i = 0; i < 1; i++) {
-        arr[i] = (arr[i]) - (arr[j])
-        arr[j] = arr[i] + arr[j];
-        arr[i] = -(arr[i]) + (arr[j]);
+    getValue(row, column) {
 
-        console.log(arr);
+        return (this.values[row][column]);
     }
-    return [arr];
+}
+console.log(pyramid.getValue(4, 4))
+
+
+
+
+/* A recursive function. */
+let process = function (row, column) {
+    if (row == 1) return pyramid.getValue(row, column);
+
+    left = process(row - 1, column);
+    right = process(row - 1, column + 1);
+    result = pyramid.getValue(row, column) + Math.min(left, right);
+    return result
 }
 
-console.log(twoPointer(numbers))
+
+console.log(process(4, 1));
+
+
+
