@@ -18,11 +18,11 @@ const img = document.querySelector('img');
 
 
 
-/* Creating a form element and setting the type of the submit button to submit. */
+/*Fetching the gif from giphy api on and setting the searched value to empty*/
 
 
 searchBtn.addEventListener("click", () => {
-    showGif(searchValue.value);
+    fetchGif(searchValue.value);
     searchValue.value = ''
 });
 
@@ -36,39 +36,29 @@ searchValue.setAttribute(
     "color:white; background:black; width:10rem; height:3rem"
 );
 
+img.setAttribute(
+    'style', 'height:40vh;widht:100vw'
+);
+
 
 /* Fetching a gif from the Giphy API and setting the src attribute of an image element to the URL of
 the gif. */
 
-showGif = (toSearch = 'dog') => {
-    fetch(`https://api.giphy.com/v1/gifs/translate?api_key=dug0j2a4gXaxE7Rid0exPLjC5GLJxVTL&s=${toSearch}`, { mode: 'cors' })
-        .then(function (response) {
-            console.log(response);
-            return (response.json());
-
-        })
-        .then(function (response) {
-            try {
-                console.log(response)
-                img.src = response.data.images.original.url;
-
-
-
-            } catch {
-                img.src = 'https://blog.cdn.own3d.tv/resize=fit:crop,height:400,width:600/xinJss8TDnfdLunn6mfA'
-                console.log('u are doing great, keep going, my man');
-            };
-
-
-        });
-
+async function fetchGif(toSearch = 'dog') {
+    const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=dug0j2a4gXaxE7Rid0exPLjC5GLJxVTL&s=${toSearch}`, { mode: 'cors' })
+    const catData = await response.json();
+    try {
+        img.src = catData.data.images.original.url;
+    } catch {
+        console.log('smily face:)');
+    }
 }
 
-showGif();
+fetchGif();
 
-testFunc = () => {
+testCunt = () => {
     window.test = 1;
 }
-testFunc();
+testCunt();
 
 console.log(test + 1);
