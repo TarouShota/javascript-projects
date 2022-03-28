@@ -43,30 +43,35 @@ the gif. */
 
 async function fetchGif(toSearch = 'dog') {
     const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=dug0j2a4gXaxE7Rid0exPLjC5GLJxVTL&s=${toSearch}`, { mode: 'cors' })
-    const catData = await response.json();
+    const searchResult = await response.json();
     try {
-        img.src = catData.data.images.original.url;
-        console.log(catData)
+        img.src = searchResult.data.images.original.url;
+        console.log(searchResult)
     } catch {
         console.log('smily face:)');
     }
 }
+/* Fetching the weather data from the OpenWeatherMap API. */
 async function showWeather(toSearch) {
+    /* The image is being set to the URL of the weather icon. */
     img.src = `https://avatars.githubusercontent.com/u/46716452?v=4`;
     const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${toSearch}&limit=&appid=4e933858aef6891926f4927f0068c206`, { mode: 'cors' })
     const coordinates = await response.json();
     const [lon, lat] = [coordinates[0].lon, coordinates[0].lat];
 
+
+    /* Fetching the weather data from the OpenWeatherMap API. */
     const weatherFetch = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4e933858aef6891926f4927f0068c206`, { mode: 'cors' })
     const weatherData = await weatherFetch.json();
+    console.log(weatherData);
     const weatherIcon = weatherData.weather[0].icon
 
 
+    /* A try catch block. */
     try {
+        /* Setting the src attribute of the image element to the URL of the weather icon. */
+
         img.src = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`
-        console.log(coordinates);
-        console.log(weatherData);
-        console.log(weatherData.weather[0].icon)
     } catch (error) {
         console.log(error);
     }
