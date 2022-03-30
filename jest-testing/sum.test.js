@@ -1,10 +1,13 @@
-
+import combine from './sum'
 const toSum = require('./sum');
+
 
 test('returns a+b', () => {
     expect(toSum(1, 2)).toBe(3)
 });
-
+test('returns a*b', () => {
+    expect(combine(4, 6)).toBe(24)
+});
 test('object assignment', () => {
     const data = { one: 1 };
     data['two'] = 2;
