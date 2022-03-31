@@ -3,5 +3,7 @@ console.log('hey');
 let sum = (a, b) => {
     return a + b
 }
-module.exports = sum;
+let combine = (a, b) => { return a * b }
+
+export default combine
 
