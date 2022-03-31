@@ -1,4 +1,4 @@
-import combine from './sum'
+const combine = require('./sum');
 const toSum = require('./sum');
 
 
