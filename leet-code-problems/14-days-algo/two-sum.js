@@ -1,16 +1,40 @@
+let numbers = [2, 7, 11, 12, 13, 15, 99];
+const target = 114;
+
+let twoPointer = function (arr, targ) {
+    if (arr.length == 2) {
+        if (nums[0] + nums[1] == target) {
+            return `U found it${nums[0]} ${nums[1]}`
+        } else {
+            return undefined
+        }
+    }
+    let middle = arr[Math.floor(arr.length / 2)];
+    let atIndex = (arr.indexOf(middle));
+
+    let i = 0;
+    let j = arr.length - 1
+    for (i; i < arr.length; i++) {
+
+        for (j; j > -1; j = j - 1) {
+            let sum = arr[i] + arr[j];
+            console.log([i, j])
+            console.log(sum);
+            if (sum == targ) {
+                return { i, j };
+            }
+            if (sum > targ) {
+                continue
+            }
+            if (sum < targ) {
+                break
+            }
 
 
-
-
-
-let numbers = [
-    -1, 0, 3,
-    5, 9, 12];
-let targets = 9;
-
-console.log(Math.round(targets));
-//console.log(nums[nums.length / 2])
-
+        }
+    }
+    return -1
+}
 
 var searchInsert = function (nums, target) {
 
@@ -51,12 +75,8 @@ var searchInsert = function (nums, target) {
     return (output !== undefined) ? nums.indexOf(output) : addElem();
 }
 
-console.log(searchInsert(numbers, 9));
-console.log(searchInsert([3], 1));
-console.log(searchInsert([-1, 0, 3, 5, 9, 12], 2));
+
+console.log(twoPointer(numbers, target));
 
 
 
-let twoPointer = function (array, target) {
-
-}
