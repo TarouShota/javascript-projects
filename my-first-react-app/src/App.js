@@ -3,50 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 
-class Board extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(9).fill(null)
-    }
-  }
-  renderSquare(i) {
-    return <square value={i} />;
-  }
-}
-/**
- * It returns a div element with a header and a paragraph.
- * @returns The JSX code is being returned.
- */
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
+// class Board extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       squares: Array(9).fill(null)
+//     }
+//   }
+//   renderSquare(i) {
+//     return <square value={i} />;
+//   }
 // }
 
-export function MyButton({ count, onClick }) {
 
-  return (
-    <button onClick={onClick}>
-      U clicked me {count} times
-    </button>
-  );
-}
 const products = [
   { title: 'Cabbage', id: 1 },
   { title: 'Garlic', id: 2 },
@@ -58,28 +27,51 @@ const products = [
 // }
 
 
-export function List() {
-  const listItems = products.map(product =>
-    <li key={product.id}>
-      {product.title}
-    </li>
-  );
-  const [count, setCount] = useState(0);
 
-  function handleClick() {
-    setCount(count + 1);
 
+
+
+/**
+ * It sets the state of the input to the value of the input.
+ * @returns A form with an input field.
+ */
+export function Input() {
+  const [nameInput, setNameInput] = useState('');
+
+  function InputChange(nameInput, setNameInput) {
+
+    setNameInput(nameInput);
   }
-  console.log(listItems)
+
+
+  function changeView() {
+    setNameInput(nameInput + 'suui');
+  }
+
+  function MyButton() {
+    return (
+      <button onClick={changeView}>
+        Clicked me?
+      </button>
+    )
+  }
+
+
   return (
     <>
-      <ul>{listItems}</ul>
-      <h1>{count}</h1>
+      <form>
+        <input type='text'
+          value={nameInput}
+          placeholder='name'
+          onChange={(e) => InputChange(e.target.value, setNameInput)}
+        />
+        <MyButton />
 
-      <MyButton count={count} onClick={handleClick} />
-      <MyButton count={count} onClick={handleClick} /></>
+        <h1>{nameInput}</h1>
+
+      </form>
+    </>
   );
-
 }
 
 
