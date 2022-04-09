@@ -1,3 +1,4 @@
+/*  */
 
 
 
@@ -11,6 +12,10 @@ let targets = 9;
 console.log(Math.round(targets));
 //console.log(nums[nums.length / 2])
 
+/* This code is iterating through the array and checking if the target is equal to the middle element.
+If it is, it returns the middle element. If it is not, it checks if the target is less than the
+middle element. If it is, it iterates through the left side of the array. If it is not, it iterates
+through the right side of the array. */
 
 var searchInsert = function (nums, target) {
 
@@ -32,11 +37,11 @@ var searchInsert = function (nums, target) {
         }
         if (middle > target) {
             let leftSide = nums.slice(0, atIndex);
-            iterate(leftSide, target);
+            return iterate(leftSide, target);
         }
         if (middle < target) {
             let rightSide = nums.slice(atIndex, nums.length);
-            iterate(rightSide, target);
+            return iterate(rightSide, target);
         }
     }
     addElem = function () {
