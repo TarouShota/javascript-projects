@@ -1,6 +1,13 @@
+/* Creating an array of numbers and a target number. */
 let numbers = [2, 7, 11, 12, 13, 15, 99];
-const target = 114;
+const target = 106;
 
+/**
+ * Given an array of integers, return the indices of the two numbers that add up to a specific target
+ * @param arr - the array of numbers
+ * @param targ - the target number
+ * @returns undefined
+ */
 let twoPointer = function (arr, targ) {
     if (arr.length == 2) {
         if (nums[0] + nums[1] == target) {
@@ -36,6 +43,10 @@ let twoPointer = function (arr, targ) {
     return -1
 }
 
+/* This code is iterating through the array and checking if the target is equal to the middle element.
+If it is, it returns the middle element. If it is not, it checks if the target is less than the
+middle element. If it is, it iterates through the left side of the array. If it is not, it iterates
+through the right side of the array. */
 var searchInsert = function (nums, target) {
 
     iterate = function (nums, target) {
