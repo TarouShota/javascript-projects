@@ -12,6 +12,7 @@ import dio from './dio.png'
 import { useTimer } from 'react-timer-hook';
 import Demo from './PositionTracker';
 import { useMouse } from 'react-use';
+import MyTimer from './Timer';
 
 
 
@@ -28,43 +29,23 @@ export function Input() {
   const [gameStateOver, setGameStateOver] = useState(false);
 
   window.time = new Date();
-  window.time.setSeconds(window.time.getSeconds() + 200)
+  window.time.setSeconds(550)
 
   const [nameInput, setNameInput] = useState('');
   const [gameStart, setGameStart] = useState(false);
 
+  const [chooseObject, setChooseObject] = useState(false);
+
   const ref = React.useRef(null);
   const { docX, docY, posX, posY, elX, elY, elW, elH } = useMouse(ref);
-  console.log(`IN DOC ${docX}, ${docY}`);
-  console.log(`IN ELEM ${elX}, ${elY}`);
-
-
-  function MyTimer({ expiryTimestamp }) {
-
-    const {
-      seconds,
-      minutes,
-      hours,
-      days,
-      isRunning,
-      start,
-      pause,
-      resume,
-      restart,
-    } = useTimer({ expiryTimestamp, onExpire: () => setGameStateOver(true) });
 
 
 
-    return (
 
-      <div style={{ textAlign: 'center' }}>
-        <div style={{ fontSize: '3rem' }}>
-          <span>{minutes}</span>:<span>{seconds}</span>
-        </div>
 
-      </div>
-    );
-  }
+
+
+
 
 
   // 10 minutes timer
@@ -89,18 +70,29 @@ export function Input() {
       </button>
     )
   }
-  function gotClicked() {
-    console.log('suka, meny ustap aldy')
+  function GotClicked() {
+    console.log(`IN ELEM ${docX}, ${docY}`);
+    //bowser Y 2345-2480 
+    dropDown(docX, docY);
+    setChooseObject(true);
+
+    // console.log(`IN DOC ${docX}, ${docY}`);
+
+
+  }
+  function dropDown(x, y) {
+    window.dropDownMenu = <div style={{ position: 'absolute', left: `${x}px`, top: `${y}px`, border: '5px solid white' }}>
+
+    </div>
   }
 
   function Block() {
     return (
-      <div onClick={gotClicked} style={{ position: 'absolute', top: '150rem', left: '40rem', width: '50%', height: '120px', border: '10px solid white' }}>
+      <div onClick={GotClicked} style={{ position: 'relative', top: '150rem', left: '75rem', width: '40%', height: '120px', border: '10px solid white' }}>
 
       </div>
     )
   }
-
 
 
 
@@ -116,13 +108,15 @@ export function Input() {
     return (
       <>
 
-        <MyTimer expiryTimestamp={window.time} />
+        <MyTimer expiryTimestamp={window.time} changeState={setGameStateOver} />
 
         {/* <FollowCursor /> */}
         {/* <Demo /> */}
-        <div ref={ref} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <Block />
-          <img src={mainImage} className='main-image' ></img>
+        <div ref={ref} style={{ display: 'flex', justifyContent: 'center' }}>
+          <img onClick={GotClicked} src={mainImage} className='main-image' ></img>
+          {chooseObject &&
+            window.dropDownMenu
+          }
         </div>
       </>
     )
