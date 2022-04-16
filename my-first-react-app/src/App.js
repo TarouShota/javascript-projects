@@ -13,7 +13,8 @@ import { useTimer } from 'react-timer-hook';
 import Demo from './PositionTracker';
 import { useMouse } from 'react-use';
 import MyTimer from './Timer';
-
+import { characters, chars } from './main-script';
+import { getNextKeyDef } from '@testing-library/user-event/dist/keyboard/getNextKeyDef';
 
 
 
@@ -29,23 +30,19 @@ export function Input() {
   const [gameStateOver, setGameStateOver] = useState(false);
 
   window.time = new Date();
-  window.time.setSeconds(550)
+  window.time.setSeconds(700);
 
   const [nameInput, setNameInput] = useState('');
   const [gameStart, setGameStart] = useState(false);
 
   const [chooseObject, setChooseObject] = useState(false);
+  const [alertBlock, setAlertBlock] = useState('hidden');
+
+
+
 
   const ref = React.useRef(null);
-  const { docX, docY, posX, posY, elX, elY, elW, elH } = useMouse(ref);
-
-
-
-
-
-
-
-
+  const { docX, docY } = useMouse(ref);
 
 
   // 10 minutes timer
@@ -57,7 +54,6 @@ export function Input() {
 
 
   function changeView() {
-    setNameInput(nameInput + 'suui');
     setGameStart(true);
 
   }
@@ -77,22 +73,83 @@ export function Input() {
     setChooseObject(true);
 
     // console.log(`IN DOC ${docX}, ${docY}`);
+  }
+  function verifyClick(toVerify) {
+    return (chars[`${toVerify}`].position.includes(docY)) ? chars[`${toVerify}`].clicked() : false;
+
+  }
+
+  function listClick(e) {
+    console.log(docY);
+    verifyClick(e.target.innerText);
+
+    //verifyClick();
+    setChooseObject(false);
 
 
   }
+
+
+
+  // //
+  // for (const char in chars) {
+  //   if(chars[`${char}`].found===false){
+  //       console.log(chars[`${char}`].name)
+  //   }
+
+  // }
+
+
+  // }
+  window.charList = []
+  function createArray() {
+
+    for (const char in chars) {
+      if (chars[`${char}`].found === false) {
+        window.charList.push(<li key={char} onClick={listClick}>{chars[`${char}`].name}</li>)
+      }
+    }
+    if (window.charList.length == 0) {
+      setGameStateOver(true);
+    }
+
+  }
+
+
   function dropDown(x, y) {
-    window.dropDownMenu = <div style={{ position: 'absolute', left: `${x}px`, top: `${y}px`, border: '5px solid white' }}>
+    createArray();
 
+
+    window.dropDownMenu = <div style={{
+      position: 'absolute',
+      left: `${x}px`,
+      top: `${y}px`,
+      background: '#221E22',
+      color: 'white',
+      borderRadius: '0.6rem'
+    }}>
+      <ul style={{
+        listStyleType: 'none',
+        marginRight: '2rem'
+      }}> {window.charList}</ul>
     </div>
+
   }
 
-  function Block() {
-    return (
-      <div onClick={GotClicked} style={{ position: 'relative', top: '150rem', left: '75rem', width: '40%', height: '120px', border: '10px solid white' }}>
+  // function Block() {
+  //   return (
+  //     <div onClick={GotClicked} style={{
+  //       position: 'relative',
+  //       top: '150rem',
+  //       left: '75rem',
+  //       width: '40%',
+  //       height: '120px',
+  //       border: '10px solid white'
+  //     }}>
 
-      </div>
-    )
-  }
+  //     </div>
+  //   )
+  // }
 
 
 
@@ -113,6 +170,10 @@ export function Input() {
         {/* <FollowCursor /> */}
         {/* <Demo /> */}
         <div ref={ref} style={{ display: 'flex', justifyContent: 'center' }}>
+
+          {/* {alertBlock && <h1>SUUi</h1>
+
+          } */}
           <img onClick={GotClicked} src={mainImage} className='main-image' ></img>
           {chooseObject &&
             window.dropDownMenu

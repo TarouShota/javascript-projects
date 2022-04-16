@@ -47,42 +47,38 @@ class HardHidden extends Hidden {
 
 
 let bowser = new EasyHidden("bowser", range(2415, 2542, 1));
-let turnipHead = new NormalHidden("turnip-head", range(3000, 3076, 1));
+let turnipHead = new NormalHidden("turniphead", range(3000, 3076, 1));
 let dio = new HardHidden("dio", range(5114, 5170, 1));
 let ryuk = new NormalHidden('ryuk', range(2758, 2843, 1));
 let patrick = new HardHidden('patrick', range(4616, 4668, 1));
 
 
 
-const chars = {
+export const chars = {
     bowser: bowser,
-    turnipHead: turnipHead,
+    turniphead: turnipHead,
     ryuk: ryuk,
     patrick: patrick,
     dio: dio
-
-
-
 };
 
 let charsArray = [bowser, turnipHead, dio, ryuk, patrick];
 dio.clicked();
-let filtered = charsArray.filter(e => e.found == true);
-console.log(dio.position);
-console.log(filtered);
 
-console.log(chars.bowser);
-for (const char in charsArray) {
-    console.log(char);
+console.log(dio.position.includes(5171));
+console.log(patrick.found)
+
+console.log(chars.bowser.position.includes(2533));
+
+
+console.log(chars.bowser.name);
+
+for (const char in chars) {
+    if (chars[`${char}`].found === false) {
+        console.log(chars[`${char}`].name)
+    }
+
 }
-const mapped = charsArray.map(x => x.name);
-
-console.log(mapped);
-
-console.log(filtered);
-
-console.log(bowser.clicked());
-console.log(dio.clicked());
 
 
 
