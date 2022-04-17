@@ -1,37 +1,30 @@
 /* Creating a form element and setting the type of the submit button to submit. */
-let createSearchForm = function (appendIn = document.body, btnValue = 'search') {
-    window.searchForm = document.createElement("form");
-    window.searchValue = document.createElement('input');
-    window.searchBtn = document.createElement("input");
+export function createSearchForm(appendIn = document.body, btnValue = 'search') {
+    Window.searchForm = document.createElement("form");
+    Window.searchValue = document.createElement('input');
+    Window.searchBtn = document.createElement("input");
 
-    searchBtn.setAttribute("type", "submit");
-    searchValue.setAttribute('type', 'text');
+    Window.searchBtn.setAttribute("type", "submit");
+    Window.searchValue.setAttribute('type', 'text');
 
-    searchBtn.value = btnValue;
+    Window.searchBtn.value = btnValue;
 
-    searchForm.append(searchValue);
-    appendIn.append(searchForm, searchBtn);
+    Window.searchForm.append(Window.searchValue);
+    appendIn.append(Window.searchForm, Window.searchBtn);
 
 }
-createSearchForm(document.body, 'eat it');
 const img = document.querySelector('img');
 
-let styleForms = () => {
-    searchValue.setAttribute(
-        "style",
-        "color:white; background:black; width:10rem; height:3rem"
-    );
 
-    img.setAttribute(
-        'style', 'height:40vh;widht:100vw'
-    );
-}
-styleForms();
+// img.setAttribute(
+//     'style', 'height:40vh;widht:100vw'
+// );
+
 
 /*Fetching the gif from giphy api on and setting the searched value to empty*/
 
 
-searchBtn.addEventListener("click", () => {
+Window.searchBtn.addEventListener("click", () => {
     showWeather(searchValue.value);
     //searchValue.value = ''
 });
@@ -77,6 +70,7 @@ async function showWeather(toSearch) {
     }
 }
 
+// export { createSearchForm }
 //fetchGif();
 
 

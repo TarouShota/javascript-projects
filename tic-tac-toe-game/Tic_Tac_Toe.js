@@ -17,6 +17,7 @@ let game = {
 
     counter: 0,
     //asigning value to an array, assing a text content to a div-tile from array
+
     asignValue(node) {
         this.gameBoard[node] = this.counter % 2 == 0 ? "X" : "O";
         return (mainSection[node].textContent = this.gameBoard[node]);
@@ -44,13 +45,15 @@ let game = {
         return setTimeout(hideWhoStarts, 2000);
     },
 
+    //finishes the game
     gameOver(value) {
         mainDisplay.classList.add("blur-effect");
         frontDisplay.classList.add("display-flex");
 
         return (result.textContent = `${value} wins!`);
     },
-    //check if array is full
+
+    /* It's checking if the array is full. */
     fullArray() {
         return this.gameBoard.every(function (e) {
             return e > "A";
@@ -60,6 +63,7 @@ let game = {
     winState() {
         game.winningMoves.forEach((element) => {
             let tempArray = [];
+            /* It's creating a temporary array and pushing the values from the gameBoard array to it. */
             element.forEach((element) => {
                 return tempArray.push(game.gameBoard[element]);
             });
@@ -72,6 +76,7 @@ let game = {
                 return e == "O";
             });
 
+            /* It's checking if there is a winning move. */
             if (checkForX == true) {
                 this.winnerDeclared = true;
                 return game.gameOver(this.player2);
@@ -80,18 +85,18 @@ let game = {
                 return game.gameOver(this.player1);
             } else {
                 this.winnerDeclared = false;
-                return console.log(this.fullArray());
+                return this.fullArray();
             }
         });
-        return game.gameBoard;
+        // return game.gameBoard;
     },
     //press on a tile
-    gameStart: function (node) {
+    gameStart: function async(node) {
         if (this.gameBoard[node] < "A") {
             this.counter++;
 
             this.asignValue(node);
-            this.winState();
+            await this.winState();
 
             // if (this.fullArray() == false) {
 
@@ -136,6 +141,7 @@ let inputValues = [
     "form-input",
 ];
 
+/* It's creating an array of values which will be passed to the firstPlayerInp. */
 for (i = 0; i < 4; i += 1) {
     firstPlayerInp.setAttribute(
         `${inputValues.shift()}`,
@@ -181,7 +187,7 @@ for (i = 0; i < 9; i++) {
 
 //event listener to a sumbit button
 
-submitButton.addEventListener("click", (event) => {
+submitButton.addEventListener("click", () => {
     game.player1 = firstPlayerInp.value;
     game.player2 = secondPlayerInp.value;
 
@@ -195,6 +201,7 @@ let mainSection = [...document.querySelectorAll("div")];
 //every tile-div gets assigned a click event
 //passes it's div id to gameStart function
 
+/* It's creating a click event listener for each tile. */
 mainSection.forEach((button) => {
     // and for each one we add a 'click' listener
     button.addEventListener("click", () => {

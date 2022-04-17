@@ -5,9 +5,9 @@ const alphabet = [
     "O", "P", "Q", "R", "S", "T", "U",
     "V", "W", "X", "Y", "Z"];
 
+// const s1 = "ab"
+// const s2 = "eidbaooo"
 
-const s1 = 'adc'
-const s2 = 'dcda'
 /* The HashTable class is a constructor function that creates an object with a table property that is
 an empty object and a length property that is set to 0. 
 
@@ -40,6 +40,12 @@ class HashTable {
 
 }
 
+const s1 = "hello"
+
+const s2 = "ooolleoooleh"
+
+// const s1 = 'adc'
+// const s2 = 'dcda'
 
 let firTable = new HashTable();
 
@@ -57,9 +63,13 @@ let testArray2 = [...s2];
  */
 let compare = () => {
     for (const property in firTable.table) {
+        console.log(secTable.table)
+        console.log([property]);
+        console.log(secTable.table.hasOwnProperty(property))
         if (!secTable.table.hasOwnProperty(property)) {
             return false
         }
+
         if (firTable.table[property] > secTable.table[property]) {
             return false
         }
@@ -83,17 +93,27 @@ let checkInclusion = () => {
     /* Comparing the two strings and adding the characters to the second hash table. */
     for (i = 0; i < testArray2.length; i++) {
         console.log(secTable.length);
+        console.log(secTable.table)
         console.log(firTable.length);
+
         if (testArray1.includes(testArray2[i])) {
             secTable.addCharacters(testArray2[i]);
+            if (secTable.length >= firTable.length) {
+                if (!compare()) {
+                    // for (const key in secTable.table) {
+                    //     delete secTable.table[key];
+                    // }
+                    // secTable.length = 0;
+                } else {
+                    return true
+                }
+            }
+
             console.log(secTable.length);
             continue
         }
-        if (secTable.length === firTable.length) {
-            console.log('dsf');
-            return compare();
-            continue
-        }
+
+
 
         else {
             for (const key in secTable.table) {
@@ -101,12 +121,13 @@ let checkInclusion = () => {
             }
             secTable.length = 0;
         }
-
     }
     return false
 }
+
 console.log(checkInclusion());
-console.log(compare());
+
+// console.log(compare());
 //  console.log(testArray1.includes(testArray2[i]));
 //console.log(testArray2[i])
 
