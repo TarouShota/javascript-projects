@@ -1,5 +1,5 @@
-const combine = require('./sum');
-const toSum = require('./sum');
+import combine from "./src/sum.js";
+//const toSum = require('./sum');
 
 
 test('returns a+b', () => {

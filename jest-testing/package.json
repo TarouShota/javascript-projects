@@ -1,5 +1,9 @@
 {
     "scripts": {
         "test": "jest"
+    },
+    "devDependencies": {
+        "@babel/preset-typescript": "^7.16.7",
+        "babel-cli": "^6.26.0"
     }
 }

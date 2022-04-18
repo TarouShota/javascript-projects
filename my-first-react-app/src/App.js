@@ -13,7 +13,8 @@ import { useTimer } from 'react-timer-hook';
 import Demo from './PositionTracker';
 import { useMouse } from 'react-use';
 import MyTimer from './Timer';
-
+import { characters, chars } from './main-script';
+import { getNextKeyDef } from '@testing-library/user-event/dist/keyboard/getNextKeyDef';
 
 
 
@@ -26,26 +27,23 @@ import MyTimer from './Timer';
  * @returns A form with an input field.
  */
 export function Input() {
-  const [gameStateOver, setGameStateOver] = useState(false);
 
   window.time = new Date();
-  window.time.setSeconds(550)
+  window.time.setSeconds(700);
+
+  const [gameStateOver, setGameStateOver] = useState(false);//starting,playing,losing,wining
 
   const [nameInput, setNameInput] = useState('');
   const [gameStart, setGameStart] = useState(false);
 
   const [chooseObject, setChooseObject] = useState(false);
+  const [alertBlock, setAlertBlock] = useState('hidden');//right,wrong
+
+  window.charList = []
+
 
   const ref = React.useRef(null);
-  const { docX, docY, posX, posY, elX, elY, elW, elH } = useMouse(ref);
-
-
-
-
-
-
-
-
+  const { docX, docY } = useMouse(ref);
 
 
   // 10 minutes timer
@@ -57,7 +55,6 @@ export function Input() {
 
 
   function changeView() {
-    setNameInput(nameInput + 'suui');
     setGameStart(true);
 
   }
@@ -70,6 +67,8 @@ export function Input() {
       </button>
     )
   }
+  /* A function that is called when the user clicks on the image. It is used to display the dropdown
+  menu. */
   function GotClicked() {
     console.log(`IN ELEM ${docX}, ${docY}`);
     //bowser Y 2345-2480 
@@ -77,22 +76,86 @@ export function Input() {
     setChooseObject(true);
 
     // console.log(`IN DOC ${docX}, ${docY}`);
+  }
 
+  /* Checking if the character is in the position of the click. */
+  function verifyClick(toVerify) {
+    return (chars[`${toVerify}`].position.includes(docY)) ? chars[`${toVerify}`].clicked() : false;
 
   }
+
+  function listClick(e) {
+
+    (verifyClick(e.target.innerText)) ? setAlertBlock('right') : setAlertBlock('wrong');
+    setTimeout(() => setAlertBlock('hidden'), 2000);
+    setChooseObject(false);
+  }
+
+
+
+  // //
+  // for (const char in chars) {
+  //   if(chars[`${char}`].found===false){
+  //       console.log(chars[`${char}`].name)
+  //   }
+
+  // }
+
+
+  // }
+
+  /**
+   * It loops through the characters object and if the character has not been found, it adds it to the
+   * character list
+   */
+  function createArray() {
+
+    for (const char in chars) {
+      if (chars[`${char}`].found === false) {
+        window.charList.push(<li key={char} onClick={listClick}>{chars[`${char}`].name}</li>)
+      }
+    }
+    if (window.charList.length == 0) {
+      setGameStateOver(true);
+    }
+
+  }
+
+
   function dropDown(x, y) {
-    window.dropDownMenu = <div style={{ position: 'absolute', left: `${x}px`, top: `${y}px`, border: '5px solid white' }}>
+    createArray();
 
+
+    window.dropDownMenu = <div style={{
+      position: 'absolute',
+      left: `${x}px`,
+      top: `${y}px`,
+      background: '#221E22',
+      color: 'white',
+      borderRadius: '0.6rem'
+    }}>
+      <ul style={{
+        listStyleType: 'none',
+        marginRight: '2rem'
+      }}> {window.charList}</ul>
     </div>
+
   }
 
-  function Block() {
-    return (
-      <div onClick={GotClicked} style={{ position: 'relative', top: '150rem', left: '75rem', width: '40%', height: '120px', border: '10px solid white' }}>
+  // function Block() {
+  //   return (
+  //     <div onClick={GotClicked} style={{
+  //       position: 'relative',
+  //       top: '150rem',
+  //       left: '75rem',
+  //       width: '40%',
+  //       height: '120px',
+  //       border: '10px solid white'
+  //     }}>
 
-      </div>
-    )
-  }
+  //     </div>
+  //   )
+  // }
 
 
 
@@ -112,7 +175,15 @@ export function Input() {
 
         {/* <FollowCursor /> */}
         {/* <Demo /> */}
-        <div ref={ref} style={{ display: 'flex', justifyContent: 'center' }}>
+        <div ref={ref} style={{ display: 'flex', justifyContent: 'center', }}>
+          {alertBlock !== 'hidden' && <div style={{ position: 'fixed', left: '40%', top: '7vh', backgroundColor: 'white', padding: '1.5rem', borderRadius: '1.2rem' }}>
+            <h1>You got it
+              {alertBlock == 'right' && <span style={{ color: 'green' }}> {alertBlock}!</span>
+              }
+              {alertBlock == 'wrong' && <span style={{ color: 'red' }}> {alertBlock}!</span>}
+            </h1>
+          </div>
+          }
           <img onClick={GotClicked} src={mainImage} className='main-image' ></img>
           {chooseObject &&
             window.dropDownMenu

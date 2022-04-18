@@ -1,6 +1,6 @@
 # Eloquent-JavaScript:
- practical usage of a programming language - JavaScript<br />
- Current projects:
+
+<h1>small javascript projects</h1><br />
  tic-tac-toe-game <br />
  local-library-project <br />
  leet-code-exercises <br />
