@@ -14,7 +14,7 @@ export default function MyTimer({ expiryTimestamp, changeState }) {
         pause,
         resume,
         restart,
-    } = useTimer({ expiryTimestamp, onExpire: () => changeState(true) });
+    } = useTimer({ expiryTimestamp, onExpire: () => changeState('losing') });
 
     return (
 
