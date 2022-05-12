@@ -191,6 +191,7 @@ export function Input() {
   //     </div>
   //   )
   // }
+  /* Creating an array of objects. */
   function BoardFunction() {
 
     const [inStockOnly, setInStockOnly] = useState(false);
@@ -220,6 +221,11 @@ export function Input() {
       );
     }
 
+    /**
+     * This function takes in a product object and returns a table row with the product's name, gameWon,
+     * patrick, and tom properties.
+     * @returns A React element.
+     */
     function ProductRow({ product }) {
       const name = product.name
       const gameWon = product.gameWon
@@ -284,6 +290,11 @@ export function Input() {
     }
     //  { name: "Bata55555", gameWon: false, patrick: false, bowser: true, turnipHead: true, tom: true },
 
+    /**
+     * The SearchBar function returns a form element that contains three checkboxes, each of which is
+     * controlled by a state variable.
+     * @returns The SearchBar function is being returned.
+     */
     function SearchBar() {
       return (
         <form>
