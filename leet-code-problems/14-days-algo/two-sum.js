@@ -8,6 +8,14 @@ const target = 106;
  * @param targ - the target number
  * @returns undefined
  */
+
+// Basic twoPointer function
+// First, check whether or not there is only two elems in the given arr
+// If not, then proceed to the main two point algorithm
+// first pointer points to the first element of the array, while the 2nd pointer to the last one
+// If the sum of two elements is greater than the target, then the 2nd pointer points to element 1 index lower
+// if the sum of two elements is lower than the target, then the 1st pointer points to 1 element further
+
 let twoPointer = function (arr, targ) {
     if (arr.length == 2) {
         if (nums[0] + nums[1] == target) {
@@ -16,8 +24,8 @@ let twoPointer = function (arr, targ) {
             return undefined
         }
     }
-    let middle = arr[Math.floor(arr.length / 2)];
-    let atIndex = (arr.indexOf(middle));
+    // let middle = arr[Math.floor(arr.length / 2)];
+    // let atIndex = (arr.indexOf(middle));
 
     let i = 0;
     let j = arr.length - 1
@@ -88,6 +96,6 @@ var searchInsert = function (nums, target) {
 
 
 console.log(twoPointer(numbers, target));
-
+console.log(searchInsert([1,2,3,4,5,6],-321))
 
 

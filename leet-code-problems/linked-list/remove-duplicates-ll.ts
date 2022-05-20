@@ -10,31 +10,39 @@ let twoPointer = function (arr: Array<number>, targ: number): object | string {
     // let atIndex = (arr.indexOf(middle));
 
     let i = 0;
-    let j = i + 1;
+    let j = 1;
+    let elemsToSkip = 1;
+
     let filteredArr: Array<number> = []
     for (i; i < arr.length; i++) {
 
         for (j; j < arr.length; j = j + 1) {
-            let sum = arr[i] + arr[j];
-            console.log([i, j])
-            console.log(sum);
-            // if (sum == targ) {
-            //     return { i, j };
-            // }
+            //let sum = arr[i] + arr[j];
+            console.log(j)
+            console.log(i);
+            //console.log(arr[i]);
+            //console.log(arr[j]);
             if (arr[i] == arr[j]) {
-                break
-            }
-            if (arr[i] != arr[j]) {
+                i += elemsToSkip
+                elemsToSkip++
                 continue
             }
-
-
+            if (arr[i] != arr[j]) {
+                elemsToSkip = 0;
+                filteredArr.push(arr[i]);
+                break
+            }
         }
+
+
         console.log(i)
+
     }
+    console.log(filteredArr);
     return '-1'
 }
-console.log(twoPointer([1, 2, 3, 4, 4, 4], 1))
-console.log(twoPointer([1, 2, 3, 3, 4, 4, 5], 1));
+
+console.log(twoPointer([1, 2, 2, 2, 3, 3, 4, 4, 5], 1))
+//console.log(twoPointer([1, 2, 3, 3, 4, 4, 5], 1));
 
 export { }

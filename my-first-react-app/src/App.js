@@ -72,9 +72,12 @@ export function Input() {
 
   function MyButton() {
     return (
-      <button onClick={gameStart}>
-        Start
-      </button>
+      <>
+        {/* <button class="button-35" role="button" onClick={gameStart}>Start</button> */}
+        <button class="button-57" role="button" onClick={gameStart}><span class="text" >Start</span><span>Good Luck!</span></button>
+
+        {/* <button class="button-4" role="button" >Start</button> */}
+      </>
     )
   }
   /* A function that is called when the user clicks on the image. It is used to display the dropdown
@@ -105,14 +108,14 @@ export function Input() {
     (verifyClick(e.target.innerText)) ? setAlertBlock('right') : setAlertBlock('wrong');
 
 
-    let promise = new Promise((resolve, reject) => {
+    // let promise = new Promise((resolve, reject) => {
 
-      setTimeout(() => resolve('waiting'), 1500)
-    })
+    //   setTimeout(() => resolve('waiting'), 1500)
+    // })
 
-    promise.then(
-      result => setAlertBlock('hidden')
-    )
+    // promise.then(
+    //   result => setAlertBlock('hidden')
+    // )
 
   }
 
@@ -134,7 +137,7 @@ export function Input() {
 
     for (const char in chars) {
       if (chars[`${char}`].found === false) {
-        window.charList.push(<li key={char} onClick={listClick}>{chars[`${char}`].name}</li>)
+        window.charList.push(<li key={char} className={'li-elem'} onClick={listClick}>{chars[`${char}`].name}</li>)
       }
     }
     if (window.charList.length == 0) {
@@ -154,7 +157,8 @@ export function Input() {
       top: `${y}px`,
       background: '#2A2B2E',
       color: '#C0E2C4',
-      borderRadius: '0.6rem'
+      borderRadius: '0.6rem',
+      width: '20vw'
     }}>
       <ul style={{
         listStyleType: 'none',
@@ -396,7 +400,7 @@ export function Input() {
       <div className='input-form'>
         <div id='game-start-div'>
           <form>
-            <h1>Find them all!</h1>
+            <h1 style={{ textAlign: 'center' }}>Find them all!</h1>
             <input type='text' className='main-input'
               value={nameInput}
               placeholder='Your Name'
@@ -406,10 +410,10 @@ export function Input() {
 
           </form >
         </div>
-        <div id='leader-board'>
+        {/* <div id='leader-board'>
           <h1>Best players</h1>
           <BoardFunction />
-        </div>
+        </div> */}
       </div>
       <div className='items-to-find'>
         <h2>Bowser - <span className='easy-dif'> Easy</span></h2>
