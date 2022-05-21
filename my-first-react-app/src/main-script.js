@@ -79,7 +79,7 @@ export const playerBoardKeys = Object.keys(playerBoard[0])
 
 // patrick.clicked()
 // turnipHead.clicked()
-ryuk.clicked();
+// ryuk.clicked();
 
 // let charsArray = [bowser, turnipHead, dio, ryuk, patrick];
 // // dio.clicked();
