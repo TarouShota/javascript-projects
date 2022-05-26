@@ -8,13 +8,18 @@
  * @param stop - The value of the stop parameter is the first number that is not in the set.
  * @param step - The step value.
  */
-const range = (start, stop, step) =>
+const range = (start: number, stop: number, step: number) =>
     Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
 
 
 /* A class that represents a hidden object in a game, with a name, position, and difficulty level. */
 class Hidden {
-    constructor(name, position, found) {
+    name: string;
+    position: any;
+    found: boolean;
+    dificulty: string;
+    constructor(name: string, position: any, found: any) {
+
         this.name = name;
         this.position = position;
         this.found = false
@@ -27,6 +32,7 @@ class Hidden {
 }
 
 class EasyHidden extends Hidden {
+
     constructor() {
         super(...arguments);
         this.dificulty = 'easy'
@@ -48,11 +54,12 @@ class HardHidden extends Hidden {
 }
 
 
-let bowser = new EasyHidden("bowser", range(2415, 2542, 1));
-let turnipHead = new NormalHidden("turniphead", range(3000, 3076, 1));
-let tom = new HardHidden("tom", range(5639, 5700, 1));
-let ryuk = new NormalHidden('ryuk', range(2758, 2843, 1));
-let patrick = new HardHidden('patrick', range(4616, 4668, 1));
+/* Creating new instances of the class Hidden. */
+let bowser = new EasyHidden("bowser", range(2350, 2500, 1));
+let turnipHead = new NormalHidden("turniphead", range(2950, 3010, 1));
+let tom = new HardHidden("tom", range(5600, 5650, 1));
+let ryuk = new NormalHidden('ryuk', range(2710, 2790, 1));
+let patrick = new HardHidden('patrick', range(4550, 4650, 1));
 
 
 

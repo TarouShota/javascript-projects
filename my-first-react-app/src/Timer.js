@@ -18,12 +18,12 @@ export default function MyTimer({ expiryTimestamp, changeState }) {
 
     return (
 
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', position: 'fixed', left: '5%', top: '1vh', background: '#15181a', border: '0.3rem solid #C0E2C4', padding: '0.4rem 2.5rem', borderRadius: '0.4rem' }} >
             <div style={{ fontSize: '3rem' }}>
                 <span>{minutes}</span>:<span>{seconds}</span>
             </div>
 
-        </div>
+        </ div>
     );
 }
 /* Using the useTimer hook to create a timer that counts down to the expiryTimestamp. */
