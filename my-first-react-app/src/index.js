@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { List, MyButton, Input, Waldo, FollowCursor } from './App';
+import { List, MyButton, Input, Waldo, FollowCursor } from './App.jsx';
 import MousePos from './MousePos';
 import reportWebVitals from './reportWebVitals';
 // import from './App'

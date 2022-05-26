@@ -9,12 +9,13 @@ import bowser from './Super-Mario-Bowser.png'
 import ryuk from './shinigami-ryu.png'
 import patrick from './patrick.png'
 import tom from './tom.png'
+import gitHub from './298822_github_mark_icon 1.svg'
 // import { useTimer } from 'react-timer-hook';
 
 // import Demo from './PositionTracker';
 import { useMouse } from 'react-use';
 import MyTimer from './Timer';
-import { characters, chars, playerBoardKeys, playerBoardNames, playerBoard } from './main-script';
+import { chars, playerBoardKeys, playerBoardNames, playerBoard } from './main-script.ts';
 // import { getNextKeyDef } from '@testing-library/user-event/dist/keyboard/getNextKeyDef';
 
 
@@ -72,9 +73,12 @@ export function Input() {
 
   function MyButton() {
     return (
-      <button onClick={gameStart}>
-        Start
-      </button>
+      <>
+        {/* <button class="button-35" role="button" onClick={gameStart}>Start</button> */}
+        <button class="button-57" role="button" onClick={gameStart}><span class="text" >Start</span><span>Good Luck!</span></button>
+
+        {/* <button class="button-4" role="button" >Start</button> */}
+      </>
     )
   }
   /* A function that is called when the user clicks on the image. It is used to display the dropdown
@@ -107,7 +111,7 @@ export function Input() {
 
     let promise = new Promise((resolve, reject) => {
 
-      setTimeout(() => resolve('waiting'), 1500)
+      setTimeout(() => resolve('waiting'), 1000)
     })
 
     promise.then(
@@ -134,7 +138,7 @@ export function Input() {
 
     for (const char in chars) {
       if (chars[`${char}`].found === false) {
-        window.charList.push(<li key={char} onClick={listClick}>{chars[`${char}`].name}</li>)
+        window.charList.push(<li key={char} className={'li-elem'} onClick={listClick}>{chars[`${char}`].name}</li>)
       }
     }
     if (window.charList.length == 0) {
@@ -149,12 +153,15 @@ export function Input() {
 
 
     window.dropDownMenu = <div style={{
+      fontSize: '1.7rem',
       position: 'absolute',
       left: `${x}px`,
       top: `${y}px`,
-      background: '#2A2B2E',
+      background: '#15181a',
       color: '#C0E2C4',
-      borderRadius: '0.6rem'
+      borderRadius: '1.2rem',
+      width: '17vw',
+      border: '0.3rem solid #C0E2C4'
     }}>
       <ul style={{
         listStyleType: 'none',
@@ -191,6 +198,7 @@ export function Input() {
   //     </div>
   //   )
   // }
+  /* Creating an array of objects. */
   function BoardFunction() {
 
     const [inStockOnly, setInStockOnly] = useState(false);
@@ -220,6 +228,11 @@ export function Input() {
       );
     }
 
+    /**
+     * This function takes in a product object and returns a table row with the product's name, gameWon,
+     * patrick, and tom properties.
+     * @returns A React element.
+     */
     function ProductRow({ product }) {
       const name = product.name
       const gameWon = product.gameWon
@@ -284,6 +297,11 @@ export function Input() {
     }
     //  { name: "Bata55555", gameWon: false, patrick: false, bowser: true, turnipHead: true, tom: true },
 
+    /**
+     * The SearchBar function returns a form element that contains three checkboxes, each of which is
+     * controlled by a state variable.
+     * @returns The SearchBar function is being returned.
+     */
     function SearchBar() {
       return (
         <form>
@@ -354,7 +372,10 @@ export function Input() {
         {/* <FollowCursor /> */}
         {/* <Demo /> */}
         <div ref={ref} style={{ display: 'flex', justifyContent: 'center', }}>
-          {alertBlock !== 'hidden' && <div style={{ position: 'fixed', left: '40%', top: '7vh', backgroundColor: '#2A2B2E', padding: '1.5rem', borderRadius: '1.2rem' }}>
+          {alertBlock !== 'hidden' ? <div style={{
+            position: 'fixed', left: '40%', top: '7vh',
+            backgroundColor: '#2A2B2E', padding: '1.5rem', borderRadius: '1.2rem', transition: 'all 0.5s cubic-bezier(0,1.43,.68,1.2)'
+          }}>
             <h1>You got it
               {alertBlock == 'right' && <span className='easy-dif' > {alertBlock}!</span>
               }
@@ -363,7 +384,12 @@ export function Input() {
 
             </h1>
           </div>
-          }
+            : <div style={{
+              position: 'fixed', left: '40%', top: '7vh', opacity: '0',
+              backgroundColor: '#2A2B2E', padding: '1.5rem', borderRadius: '1.2rem', transition: 'all 0.7s cubic-bezier(0,1.43,.68,1.2)'
+            }}>
+
+            </div>}
           <img onClick={GotClicked} src={mainImage} className='main-image' ></img>
           {chooseObject &&
             window.dropDownMenu
@@ -385,7 +411,7 @@ export function Input() {
       <div className='input-form'>
         <div id='game-start-div'>
           <form>
-            <h1>Find them all!</h1>
+            <h1 style={{ textAlign: 'center' }}>Find them all!</h1>
             <input type='text' className='main-input'
               value={nameInput}
               placeholder='Your Name'
@@ -395,18 +421,24 @@ export function Input() {
 
           </form >
         </div>
-        <div id='leader-board'>
+        <div style={{ marginTop: '4rem', textDecoration: 'none' }}>
+          <a style={{ textDecoration: 'none', color: '#C0E2C4' }} href='https://github.com/TarouShota/wheres-waldo-react'>
+            <h2 >View on GitHub</h2>
+            <img src={gitHub} style={{ width: '3rem' }}></img>
+          </a>
+        </div>
+        {/* <div id='leader-board'>
           <h1>Best players</h1>
           <BoardFunction />
-        </div>
+        </div> */}
       </div>
       <div className='items-to-find'>
         <h2>Bowser - <span className='easy-dif'> Easy</span></h2>
         <img className='toFind' src={bowser}></img>
         <h2>Turnip-Head - <span className='normal-dif'> Normal</span></h2>
         <img className='toFind' src={turnipHead}></img>
-        {/* <h2>Shinigami Ryuk - <span className='normal-dif'> Normal</span></h2>
-        <img className='toFind' src={ryuk}></img> */}
+        <h2>Shinigami Ryuk - <span className='normal-dif'> Normal</span></h2>
+        <img className='toFind' src={ryuk}></img>
         <h2>Patrick - <span className='hard-dif'> Hard</span></h2>
         <img className='toFind' src={patrick}></img>
         <h2>Tom - <span className='hard-dif'> Hard</span></h2>
