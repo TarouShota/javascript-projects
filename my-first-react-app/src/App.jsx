@@ -17,7 +17,30 @@ import { useMouse } from 'react-use';
 import MyTimer from './Timer';
 import { chars, playerBoardKeys, playerBoardNames, playerBoard } from './main-script.ts';
 // import { getNextKeyDef } from '@testing-library/user-event/dist/keyboard/getNextKeyDef';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+const { REACT_APP_ApiKey } = process.env
+//adding an env file
+
+console.log(REACT_APP_ApiKey);
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBRqVJyS8lcLAFpPqS8h2DL3QUmw8-0Fjg",
+  authDomain: "friendly-chat-21a5c.firebaseapp.com",
+  projectId: "friendly-chat-21a5c",
+  storageBucket: "friendly-chat-21a5c.appspot.com",
+  messagingSenderId: "79530954328",
+  appId: "1:79530954328:web:b26c8cdb48fe044dce442d",
+  measurementId: "G-WEGRWZM3F1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 
 
