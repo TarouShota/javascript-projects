@@ -5,13 +5,19 @@ export function intervalIntersection(firstList: number[][], secondList: number[]
     console.log(maxList);
     maxList.forEach((element, index) => {
         for (i; i < element.length; i++) {
-            for (j; j <)
+            //for (j; j <)
         }
-    });
+
+    })
+    return [];
 };
 console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5], [8, 12], [15, 24], [25, 26]]));
 
-
+//oh yeah, about this problem, hehe, later
+//I need some kind of a plan for the weekends, u know what i mean?
+//The boez are under the ?, aisha? No, Go out somewhere and study there? Sounds good to me m8, I think I am yet again ready to meet some new people
+//Which will happen on 20th of June, 10 days from now on.. 10 days m8. Just enjoy your weekends, do not stay at home if you don't want to m8
+//Falling walls? Idk, doesn't seem that interesting to me
 //he he preact is coming up
 //solve this on saturday
 //possible solution is to u
