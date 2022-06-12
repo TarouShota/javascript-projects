@@ -22,3 +22,9 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 //solve this on saturday
 //possible solution is to u
 //two for loops
+//!! give sudo labs an update
+//how is it going, mate?
+//ah, it's weird.. I wanto to socialize, but there is no one around me right now
+//Aisha is there, ye, for one day in a week
+// just like this
+// Ok Aisha, yee not this week, but then u say oh ye okk
