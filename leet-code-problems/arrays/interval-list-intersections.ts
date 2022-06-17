@@ -30,4 +30,10 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // Ok Aisha, yee not this week, but then u say oh ye okk
 // after meeting, went prety well, was listening and digesting everything
 // whats poppin
-// suup sup week is going according to my plans hehe
+// suup sup week is going according to my plans heheg
+// So, yeah, thursday m8
+// It's friday, m8
+// we already have a plan for the weekend and friday evening
+// continue working on saturday 8 hours would do
+// sunday - pool, algos and ds
+// 
