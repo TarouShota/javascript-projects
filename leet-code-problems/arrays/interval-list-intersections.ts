@@ -34,6 +34,6 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // So, yeah, thursday m8
 // It's friday, m8
 // we already have a plan for the weekend and friday evening
-// continue working on saturday 8 hours would do
-// sunday - pool, algos and ds
-// 
+// continue working on saturday 8 hours would do - well, that's not true :)
+// sunday - pool, algos and ds. Don't know about pool m8
+// realisticly - laundry, picker and gym
