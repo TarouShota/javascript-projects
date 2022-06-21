@@ -38,3 +38,9 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // sunday - pool, algos and ds. Don't know about pool m8
 // realisticly - laundry, picker and gym`
 // daymn, time to beat up this picker
+//aight, looks prety good
+// calm down m8
+// so today, yet again in the library and we are gonna have some task
+//which include to fuck this picker up
+//polishing it bit more today
+//increasing maybe a code qualuty, we will see
