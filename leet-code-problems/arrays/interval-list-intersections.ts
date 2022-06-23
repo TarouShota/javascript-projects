@@ -44,3 +44,10 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 //which include to fuck this picker up
 //polishing it bit more today
 //increasing maybe a code qualuty, we will see
+
+
+//polishing the code ye, good idea
+//making it ready for the production
+
+// more or less
+// plya moinym sharshady cheta
