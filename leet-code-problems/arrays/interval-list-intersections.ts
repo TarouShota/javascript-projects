@@ -51,3 +51,10 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 
 // more or less
 // plya moinym sharshady cheta
+
+// rules of power m8
+// say less than necessary
+// King Louis XVI was talkative as I was in his childhood
+// But, after realized the power of his words
+// And has became more powerful by listening more
+// Silence is power
