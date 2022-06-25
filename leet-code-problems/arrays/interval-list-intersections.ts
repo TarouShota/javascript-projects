@@ -58,3 +58,5 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // But, after realized the power of his words
 // And has became more powerful by listening more
 // Silence is power
+// Do not read 48 rules of power before work, or should you? Idk, try not reading it on monday
+// Take more notes?
