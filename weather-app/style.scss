@@ -1,0 +1,40 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+$chupapi: $primary-color;
+@use 'input';
+
+@mixin beauty($color: black, $size: 20px) {
+    background: $color;
+    width: $size;
+    color: $color;
+}
+
+body {
+    color: $primary-color;
+    background-color: $chupapi;
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        @include beauty
+    }
+
+    li {
+        display: inline-block;
+        margin: 10px;
+        @include beauty
+    }
+
+    a {
+        display: block;
+        padding: 20px 12px;
+        text-decoration: none;
+    }
+}
+
+h1 {
+    @include beauty(white, 200px);
+}

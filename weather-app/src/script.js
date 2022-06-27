@@ -1,30 +1,32 @@
 /* Creating a form element and setting the type of the submit button to submit. */
-export function createSearchForm(appendIn = document.body, btnValue = 'search') {
-    Window.searchForm = document.createElement("form");
-    Window.searchValue = document.createElement('input');
-    Window.searchBtn = document.createElement("input");
+let button;
+let body = document.querySelector('body');
+let searchValue = document.createElement('input');
 
-    Window.searchBtn.setAttribute("type", "submit");
-    Window.searchValue.setAttribute('type', 'text');
+Window.searchForm = document.createElement("form");
 
-    Window.searchBtn.value = btnValue;
+button = document.createElement("input");
 
-    Window.searchForm.append(Window.searchValue);
-    appendIn.append(Window.searchForm, Window.searchBtn);
+button.setAttribute("type", "submit");
+searchValue.setAttribute('type', 'text');
 
-}
+
+Window.searchForm.append(searchValue);
+body.append(Window.searchForm, button);
+
+
 const img = document.querySelector('img');
 
 
-// img.setAttribute(
-//     'style', 'height:40vh;widht:100vw'
-// );
-
+img.setAttribute(
+    'style', 'height:40vh;widht:100vw'
+);
+console.log(button);
 
 /*Fetching the gif from giphy api on and setting the searched value to empty*/
 
 
-Window.searchBtn.addEventListener("click", () => {
+button.addEventListener("click", () => {
     showWeather(searchValue.value);
     //searchValue.value = ''
 });
@@ -37,13 +39,16 @@ the gif. */
 async function fetchGif(toSearch = 'dog') {
     const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=dug0j2a4gXaxE7Rid0exPLjC5GLJxVTL&s=${toSearch}`, { mode: 'cors' })
     const searchResult = await response.json();
+
     try {
+
         img.src = searchResult.data.images.original.url;
-        console.log(searchResult)
+        console.log(img)
     } catch {
         console.log('smily face:)');
     }
-}
+};
+
 /* Fetching the weather data from the OpenWeatherMap API. */
 async function showWeather(toSearch) {
     /* The image is being set to the URL of the weather icon. */
@@ -68,9 +73,10 @@ async function showWeather(toSearch) {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
-// export { createSearchForm }
-//fetchGif();
+fetchGif()
+
+//  createSearchForm }
 
 
