@@ -60,3 +60,8 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // Silence is power
 // Do not read 48 rules of power before work, or should you? Idk, try not reading it on monday
 // Take more notes?
+// sunday:
+// getting started with C++, going through the book
+// kkk m8 les go
+// lets get this one 
+// arak iship aldyk sheshes
