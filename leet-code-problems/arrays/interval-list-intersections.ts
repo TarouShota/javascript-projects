@@ -65,3 +65,6 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // kkk m8 les go
 // lets get this one 
 // arak iship aldyk sheshes
+// tak kettik sheshes, kazir olem aitpese
+// norm jumystedik, disciple and akaldylyk - joski narse sheshes
+// men koreecpyn esli che
