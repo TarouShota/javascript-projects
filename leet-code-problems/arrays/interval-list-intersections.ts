@@ -70,3 +70,6 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // men koreecpyn esli che
 // chupapi munyanka
 // nujno nauchitsya s doma rabotat, aitpese bolmaid osy
+// ok, nauchilsya s doma rabotat, effektivno daje
+// segodnya nujno protestit picker s unitami, refactoring
+// debugging
