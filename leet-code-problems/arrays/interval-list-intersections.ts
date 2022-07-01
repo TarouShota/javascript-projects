@@ -73,3 +73,6 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // ok, nauchilsya s doma rabotat, effektivno daje
 // segodnya nujno protestit picker s unitami, refactoring
 // debugging
+// friday:
+// testing the picker with the actual units,
+// finding the place, where I can import the jsScript
