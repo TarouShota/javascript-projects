@@ -78,3 +78,5 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // finding the place, where I can import the jsScript
 // I am implementing my unitPicker widget inside the TableEditor widget
 // deadline till 10 pm 
+
+// took my notes already :)
