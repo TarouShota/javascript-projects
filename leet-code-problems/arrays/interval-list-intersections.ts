@@ -80,3 +80,8 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // deadline till 10 pm 
 
 // took my notes already :)
+
+//monday 11 34 am, damn
+// so now, we have a deadline till 7:30 am to finish and polish up the component
+// eh? eh what.. ->)
+// chupapi - munyanya ;)
