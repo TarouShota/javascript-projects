@@ -17,5 +17,8 @@ function twoSum(nums: number[], target: number): number {
 };
 
 //lol, 66% from this
+// aphpahp
+// need the solve 2 problems at least daily,
+// hours prep if working
 
 console.log(twoSum([1, 2], 1));

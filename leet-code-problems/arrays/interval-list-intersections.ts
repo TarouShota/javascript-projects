@@ -85,3 +85,4 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // so now, we have a deadline till 7:30 am to finish and polish up the component
 // eh? eh what.. ->)
 // chupapi - munyanya ;)
+// sounds hard tbh, but now we have a nice deadline, so more drive thanks to that
