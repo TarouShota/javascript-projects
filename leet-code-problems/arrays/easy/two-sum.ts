@@ -25,4 +25,10 @@ function twoSum(nums: number[], target: number): number {
 // Aishamen? Ta ne, ne hochetsya, sharshap kelem uje, tamak dayindau kerek bolad
 // Aitpa, ertenge daiyndalamyz, oltirip tastau kerek phoplem solfingdy
 
+//e brat.. kalaisyn?
+//...
+//jaksy, jumystan keldim
+//pyatniza goi, component - derzkii!
+
+
 console.log(twoSum([1, 2], 1));
