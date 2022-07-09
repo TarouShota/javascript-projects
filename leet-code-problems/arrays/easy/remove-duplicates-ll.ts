@@ -44,5 +44,5 @@ let twoPointer = function (arr: Array<number>, targ: number): object | string {
 
 console.log(twoPointer([1, 2, 2, 2, 3, 3, 4, 4, 5], 1))
 //console.log(twoPointer([1, 2, 3, 3, 4, 4, 5], 1));
-
+//did i finish this?
 export { }
