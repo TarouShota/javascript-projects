@@ -66,6 +66,7 @@ const s2 = "ooolleoooleh";
 
 // const s1 = 'adc'
 // const s2 = 'dcda'
+//damn m8
 
 let firTable = new HashTable();
 
