@@ -86,3 +86,8 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // eh? eh what.. ->)
 // chupapi - munyanya ;)
 // sounds hard tbh, but now we have a nice deadline, so more drive thanks to that
+
+
+//monday after getting a reply email from sie
+//fixing the enum picker styling - prio
+//lets start already
