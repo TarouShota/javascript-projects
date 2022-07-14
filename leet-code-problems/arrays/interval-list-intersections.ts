@@ -65,3 +65,42 @@ console.log(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]], [[1, 5],
 // kkk m8 les go
 // lets get this one 
 // arak iship aldyk sheshes
+// tak kettik sheshes, kazir olem aitpese
+// norm jumystedik, disciple and akaldylyk - joski narse sheshes
+// men koreecpyn esli che
+// chupapi munyanka
+// nujno nauchitsya s doma rabotat, aitpese bolmaid osy
+// ok, nauchilsya s doma rabotat, effektivno daje
+// segodnya nujno protestit picker s unitami, refactoring
+// debugging
+// friday:
+// testing the picker with the actual units,
+// finding the place, where I can import the jsScript
+// I am implementing my unitPicker widget inside the TableEditor widget
+// deadline till 10 pm 
+
+// took my notes already :)
+
+//monday 11 34 am, damn
+// so now, we have a deadline till 7:30 am to finish and polish up the component
+// eh? eh what.. ->)
+// chupapi - munyanya ;)
+// sounds hard tbh, but now we have a nice deadline, so more drive thanks to that
+
+
+//monday after getting a reply email from sie
+//fixing the enum picker styling - prio
+//lets start already
+
+//zz there
+//I feel ok
+//
+
+
+//aight m8
+//feels good to recover
+//looks like I really needed a break
+
+
+
+//done with styling, moving on to a custom-unit bug

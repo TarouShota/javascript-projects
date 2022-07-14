@@ -17,5 +17,18 @@ function twoSum(nums: number[], target: number): number {
 };
 
 //lol, 66% from this
+// aphpahp
+// need the solve 2 problems at least daily,
+// 3 hours prep if working
+// practice an interview process, problem solve daily
+// should I grab the book? I think so, ye
+// Aishamen? Ta ne, ne hochetsya, sharshap kelem uje, tamak dayindau kerek bolad
+// Aitpa, ertenge daiyndalamyz, oltirip tastau kerek phoplem solfingdy
+
+//e brat.. kalaisyn?
+//...
+//jaksy, jumystan keldim
+//pyatniza goi, component - derzkii!
+
 
 console.log(twoSum([1, 2], 1));
